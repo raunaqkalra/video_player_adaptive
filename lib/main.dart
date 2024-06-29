@@ -35,7 +35,8 @@ class MyApp extends StatelessWidget {
       home: const Scaffold(
         backgroundColor: Colors.black54,
         body: VideoItemPlayer(
-          videoUrl: 'https://www.w3schools.com/tags/mov_bbb.mp4',
+          videoUrl:
+              'https://cph-msl.akamaized.net/hls/live/2000341/test/master.m3u8',
         ),
       ),
     );
