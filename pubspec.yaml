@@ -1,7 +1,7 @@
 name: video_player_adaptive
 description: "A new Flutter package project."
 version: 0.0.1
-homepage:
+homepage: https://github.com/raunaqkalra/video_player_adaptive
 
 environment:
   sdk: '>=3.4.3 <4.0.0'

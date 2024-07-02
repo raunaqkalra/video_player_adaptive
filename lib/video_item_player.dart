@@ -11,12 +11,19 @@ import 'package:video_player_adaptive/util/util.dart';
 import 'package:video_player_adaptive/video_fullscreen.dart';
 
 class VideoItemPlayer extends StatefulWidget {
+  /// Video URL to stream
   final String videoUrl;
+
+  /// to hide/unhide the duration of video as a live video does not have any duration
   final bool isLive;
+
+  ///to enable or disable the resolution settings icon so the user cannot change the video quality manually
+  final bool isSettingsEnabled;
 
   const VideoItemPlayer({
     required this.videoUrl,
     this.isLive = false,
+    this.isSettingsEnabled = true,
     super.key,
   });
 
@@ -298,7 +305,8 @@ class _VideoItemPlayerState extends State<VideoItemPlayer> {
                         isFullScreen: false,
                         isLive: widget.isLive,
                         onSettingsTap: onSettingsTap,
-                        isSettingsEnabled: (qualityLink?.length ?? 0) > 1,
+                        isSettingsEnabled: (qualityLink?.length ?? 0) > 1 &&
+                            widget.isSettingsEnabled,
                         onPlayToggle: (bool isPaused) {
                           isForcefullyPaused = isPaused;
                         },

@@ -1,16 +1,21 @@
 # video_player_adaptive
 
-A new Flutter project.
+Adaptive Video Player.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+dart pub add video_player_adaptive
 
-A few resources to get you started if this is your first Flutter project:
+This package supports multiple video URLs like HLS/DASH/MP4.
+Provide a URL in VideoItemPlayer(url: '<URL Here>') widget.
+This video player adapts to multiple bitrate resolutions according to the network bandwidth.
+It also has the option to change the video quality, if the URL supports.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Example:
+`VideoItemPlayer(
+    videoUrl:
+    'https://cph-msl.akamaized.net/hls/live/2000341/test/master.m3u8',
+    )`
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+I hope this helps. :)
+Also request you to contribute to this project.
