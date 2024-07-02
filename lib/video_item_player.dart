@@ -1,3 +1,5 @@
+library video_player_adaptive_example;
+
 import 'dart:async';
 import 'dart:io';
 

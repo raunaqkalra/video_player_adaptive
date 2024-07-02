@@ -1,23 +1,26 @@
-name: video_player_adaptive
-description: "A new Flutter package project."
-version: 0.0.1
-homepage:
+name: video_player_adaptive_example
+description: "A new Flutter project."
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
 
 environment:
   sdk: '>=3.4.3 <4.0.0'
-  flutter: ">=1.17.0"
+
 
 dependencies:
   flutter:
     sdk: flutter
 
   cupertino_icons: ^1.0.6
-  video_player: ^2.9.0
-  dio: ^5.4.3+1
+  video_player_adaptive:
+    path: ../
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
   flutter_lints: ^3.0.0
 
 flutter:
