@@ -1,7 +1,6 @@
 library video_player_adaptive_example;
 
 import 'dart:async';
-import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -33,8 +32,8 @@ class _VideoItemPlayerState extends State<VideoItemPlayer> {
 
   Timer? _timer;
 
-  MethodChannel timeoutManagerChannel =
-      const MethodChannel('timeout.manager.dev/channel');
+  // MethodChannel timeoutManagerChannel =
+  //     const MethodChannel('timeout.manager.dev/channel');
 
   _VideoItemPlayerState() {
     listener = () {
@@ -58,8 +57,6 @@ class _VideoItemPlayerState extends State<VideoItemPlayer> {
     };
   }
 
-  bool isTenPercentTriggered = false;
-  bool isFiftyPercentTriggered = false;
   bool isHundredPercentTriggered = false;
 
   VoidCallback? listener;
@@ -72,31 +69,31 @@ class _VideoItemPlayerState extends State<VideoItemPlayer> {
 
   ///used for android devices to not timeout while playing videos
   ///doing for android only because it already works for for ios
-  Future<dynamic> setTimeoutToNever() async {
-    if (Platform.isAndroid) {
-      try {
-        //Method channel for screen timeout handling
-        return timeoutManagerChannel.invokeMethod('keepScreenOn');
-      } on PlatformException catch (e) {
-        return "Failed to Invoke: '${e.message}'.";
-      }
-    }
-  }
-
-  Future<dynamic> setTimeoutToDefault() async {
-    if (Platform.isAndroid) {
-      try {
-        //Method channel for screen timeout handling
-        return timeoutManagerChannel.invokeMethod('keepDefault');
-      } on PlatformException catch (e) {
-        return "Failed to Invoke: '${e.message}'.";
-      }
-    }
-  }
+  // Future<dynamic> setTimeoutToNever() async {
+  //   if (Platform.isAndroid) {
+  //     try {
+  //       //Method channel for screen timeout handling
+  //       return timeoutManagerChannel.invokeMethod('keepScreenOn');
+  //     } on PlatformException catch (e) {
+  //       return "Failed to Invoke: '${e.message}'.";
+  //     }
+  //   }
+  // }
+  //
+  // Future<dynamic> setTimeoutToDefault() async {
+  //   if (Platform.isAndroid) {
+  //     try {
+  //       //Method channel for screen timeout handling
+  //       return timeoutManagerChannel.invokeMethod('keepDefault');
+  //     } on PlatformException catch (e) {
+  //       return "Failed to Invoke: '${e.message}'.";
+  //     }
+  //   }
+  // }
 
   @override
   void initState() {
-    setTimeoutToNever();
+    // setTimeoutToNever();
     _playVideo();
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
@@ -155,7 +152,7 @@ class _VideoItemPlayerState extends State<VideoItemPlayer> {
   void dispose() {
     _timer?.cancel();
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-    setTimeoutToDefault();
+    // setTimeoutToDefault();
     _videoPlayerController?.dispose();
     super.dispose();
   }
