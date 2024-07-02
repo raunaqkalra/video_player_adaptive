@@ -1,5 +1,5 @@
 name: video_player_adaptive
-description: "A new Flutter package project."
+description: "Package that supports multiple video URLs like HLS/DASH/MP4."
 version: 0.0.1
 homepage: https://github.com/raunaqkalra/video_player_adaptive
 
